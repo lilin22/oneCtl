@@ -1,0 +1,94 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "testCases.org",
+    "children" : [ {
+      "name" : "test_org",
+      "children" : [ {
+        "name" : "Test_cases",
+        "children" : [ {
+          "name" : "test_cases[13001-\\u7ec4\\u7ec7\\u7ba1\\u7406-\\u7ec4\\u957f\\u65b0\\u589e\\u7ec4\\u7ec7\\uff0c\\u7f57\\u5217\\u6240\\u5728\\u7ec4\\u7ec7\\uff0c\\u83b7\\u53d6\\u7ec4\\u7ec7\\u8be6\\u60c5\\uff0c\\u6dfb\\u52a0\\u5355\\u4e00\\u6210\\u5458\\uff0c\\u7f57\\u5217\\u7ec4\\u7ec7\\u6210\\u5458\\uff0c\\u5254\\u9664\\u6210\\u5458\\uff0c\\u4fee\\u6539\\u7ec4\\u7ec7\\uff0c\\u89e3\\u6563\\u7ec4\\u7ec7\\uff0c\\u7ec4\\u957f\\u7f57\\u5217\\u7ec4\\u7ec7-info0]",
+          "uid" : "1d8594b990127dbb",
+          "parentUid" : "f6f51cdbd4ce4964b8635a23b4807b24",
+          "status" : "broken",
+          "time" : {
+            "start" : 1681368560977,
+            "stop" : 1681368560977,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "'13001'", "[{'step': '组长新增组织', 'function': 'orgAdd', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'name': '测试组织', 'icon': 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202005%2F10%2F20200510010150_2zSAt.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1683100764&t=bdd25312bb04571ff29eb3a0306d947a'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '罗列所在组织', 'function': 'orgList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.manage_orgs.*.manager.mobile', '$mobile']}, {'eq': ['$.data.manage_orgs.*.manager.nickname', '$nickname']}]}}, {'step': '获取组织详情', 'function': 'orgDetails', 'data': {'request': {'api': '/user/v1/org?id=', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.org.name', '测试组织']}]}}, {'step': '添加单一成员', 'function': 'orgMemberAdd', 'data': {'request': {'api': '/user/v1/org/manage/member', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'org_id': '$id', 'mobiles': [18965816988]}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '罗列组织成员', 'function': 'orgMemberList', 'data': {'request': {'api': '/user/v1/org/member/list?org_id=$org_id&status=enable', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.members[0].mobile', '18965816988']}]}}, {'step': '剔除成员', 'function': 'orgMemberDel', 'data': {'request': {'api': '/user/v1/org/manage/member', 'method': 'DELETE', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'org_id': '$id', 'mobiles': [18965816988]}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '修改组织信息', 'function': 'orgModify', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'PATCH', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'id': '$id', 'name': '测试组织2', 'icon': 'https://img0.baidu.com/it/u=3859881031,3292589111&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '罗列所在组织', 'function': 'orgList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.manage_orgs.*.manager.mobile', '$mobile']}, {'eq': ['$.data.manage_orgs.*.manager.nickname', '$nickname']}]}}, {'step': '获取组织详情', 'function': 'orgDetails', 'data': {'request': {'api': '/user/v1/org?id=', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.org.name', '测试组织2']}]}}, {'step': '解散组织', 'function': 'orgDel', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'DELETE', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'ids': ['$id']}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '组长解散组织后查看列表', 'function': 'orgDelGetList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}]", "'组织管理'", "'组长新增组织，罗列所在组织，获取组织详情，添加单一成员，罗列组织成员，剔除成员，修改组织，解散组织，组长罗列组织'" ]
+        }, {
+          "name" : "test_cases[13002-\\u7ec4\\u7ec7\\u7ba1\\u7406-\\u7ec4\\u957f\\u65b0\\u589e\\u7ec4\\u7ec7\\uff0c\\u7ec4\\u957f\\u7f57\\u5217\\u6240\\u5728\\u7ec4\\u7ec7\\uff0c\\u83b7\\u53d6\\u7ec4\\u7ec7\\u8be6\\u60c5\\uff0c\\u6dfb\\u52a0\\u6210\\u5458\\uff0c\\u6210\\u5458\\u767b\\u5f55\\uff0c\\u6210\\u5458\\u9000\\u51fa\\u7ec4\\u7ec7\\uff0c\\u6210\\u5458\\u7f57\\u5217\\u6240\\u5728\\u7ec4\\u7ec7\\uff0c\\u65e0\\u6210\\u5458\\u65f6\\u7ec4\\u957f\\u89e3\\u6563\\u7ec4\\u7ec7\\uff0c\\u7ec4\\u957f\\u7f57\\u5217\\u7ec4\\u7ec7-info1]",
+          "uid" : "fbe4caa988abe0df",
+          "parentUid" : "f6f51cdbd4ce4964b8635a23b4807b24",
+          "status" : "broken",
+          "time" : {
+            "start" : 1681368563100,
+            "stop" : 1681368563100,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "'13002'", "[{'step': '组长新增组织', 'function': 'orgAdd', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'name': '测试组织', 'icon': 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202005%2F10%2F20200510010150_2zSAt.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1683100764&t=bdd25312bb04571ff29eb3a0306d947a'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '罗列所在组织', 'function': 'orgList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.manage_orgs.*.manager.mobile', '$mobile']}, {'eq': ['$.data.manage_orgs.*.manager.nickname', '$nickname']}]}}, {'step': '获取组织详情', 'function': 'orgDetails', 'data': {'request': {'api': '/user/v1/org?id=', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.org.name', '测试组织']}]}}, {'step': '添加成员', 'function': 'orgMemberAdd', 'data': {'request': {'api': '/user/v1/org/manage/member', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'org_id': '$id', 'mobiles': [18965816988]}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '普通用户登录', 'module': 'user', 'function': 'userLogin', 'data': {'request': {'api': '/user/v1/login', 'method': 'POST', 'headers': {'Content-Type': 'application/json'}, 'data': {'mobile': '18965816988', 'password': 'qa123456!', 'method': 'password'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.nickname', 'lilin']}]}}, {'step': '用户自己退出组织', 'function': 'orgExit', 'data': {'request': {'api': '/user/v1/org', 'method': 'DELETE', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'org_id': '$id'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '用户退出组织后查看列表', 'function': 'orgExitGetList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '没有成员时，解散组织', 'function': 'orgDel', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'DELETE', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'ids': ['$id']}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '组长解散组织后查看列表', 'function': 'orgDelGetList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}]", "'组织管理'", "'组长新增组织，组长罗列所在组织，获取组织详情，添加成员，成员登录，成员退出组织，成员罗列所在组织，无成员时组长解散组织，组长罗列组织'" ]
+        }, {
+          "name" : "test_cases[13003-\\u7ec4\\u7ec7\\u7ba1\\u7406-\\u7ec4\\u957f\\u65b0\\u589e\\u7ec4\\u7ec7\\uff0c\\u7ec4\\u957f\\u7f57\\u5217\\u6240\\u5728\\u7ec4\\u7ec7\\uff0c\\u83b7\\u53d6\\u7ec4\\u7ec7\\u8be6\\u60c5\\uff0c\\u6279\\u91cf\\u6dfb\\u52a0\\u6210\\u5458\\uff0c\\u6709\\u6210\\u5458\\u65f6\\u7ec4\\u957f\\u89e3\\u6563\\u7ec4\\u7ec7\\uff0c\\u7ec4\\u957f\\u7f57\\u5217\\u7ec4\\u7ec7-info2]",
+          "uid" : "ddf9e2000ebdd4ae",
+          "parentUid" : "f6f51cdbd4ce4964b8635a23b4807b24",
+          "status" : "broken",
+          "time" : {
+            "start" : 1681368563132,
+            "stop" : 1681368563132,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "'13003'", "[{'step': '组长新增组织', 'function': 'orgAdd', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'name': '测试组织', 'icon': 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202005%2F10%2F20200510010150_2zSAt.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1683100764&t=bdd25312bb04571ff29eb3a0306d947a'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '罗列所在组织', 'function': 'orgList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.manage_orgs.*.manager.mobile', '$mobile']}, {'eq': ['$.data.manage_orgs.*.manager.nickname', '$nickname']}]}}, {'step': '获取组织详情', 'function': 'orgDetails', 'data': {'request': {'api': '/user/v1/org?id=', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}, {'eq': ['$.data.org.name', '测试组织']}]}}, {'step': '批量添加成员', 'function': 'orgMemberAdd', 'data': {'request': {'api': '/user/v1/org/manage/member', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'org_id': '$id', 'mobiles': [13507589853, 15869164072]}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '有成员时，解散组织', 'function': 'orgDel', 'data': {'request': {'api': '/user/v1/org/manage', 'method': 'DELETE', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'ids': ['$id']}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}, {'step': '组长解散组织后查看列表', 'function': 'orgDelGetList', 'data': {'request': {'api': '/user/v1/org/list', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}]", "'组织管理'", "'组长新增组织，组长罗列所在组织，获取组织详情，批量添加成员，有成员时组长解散组织，组长罗列组织'" ]
+        } ],
+        "uid" : "f6f51cdbd4ce4964b8635a23b4807b24"
+      } ],
+      "uid" : "5fb96a22690a5aa4d321e739a24938ca"
+    } ],
+    "uid" : "d260877d161e1a5038ebca0ec4e5b4e2"
+  }, {
+    "name" : "testCases.user",
+    "children" : [ {
+      "name" : "test_user",
+      "children" : [ {
+        "name" : "Test_cases",
+        "children" : [ {
+          "name" : "10001---获取用户信息，并修改",
+          "uid" : "c6a027b039ea6ea6",
+          "parentUid" : "189d8391d9720ea3a96bd09b4499855a",
+          "status" : "broken",
+          "time" : {
+            "start" : 1681368562975,
+            "stop" : 1681368563038,
+            "duration" : 63
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "'10001'", "[{'step': '获取用户信息', 'function': 'userInfo', 'data': {'request': {'api': '/user/v1/user', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.data.user.mobile', '$mobile']}, {'eq': ['$.data.user.nickname', '$nickname']}, {'eq': ['$.data.user.status', 'enable']}]}}, {'step': '部分修改用户信息', 'function': 'userUpdate', 'data': {'request': {'api': '/user/v1/user', 'method': 'PATCH', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'email': '1907936995@qq.com'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}]", "'普通用户'", "'获取用户信息，并修改'" ]
+        }, {
+          "name" : "10002---获取用户信息，并修改",
+          "uid" : "365998017b9dd3d3",
+          "parentUid" : "189d8391d9720ea3a96bd09b4499855a",
+          "status" : "broken",
+          "time" : {
+            "start" : 1681368563069,
+            "stop" : 1681368563100,
+            "duration" : 31
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "'10002'", "[{'step': '获取用户信息', 'function': 'userInfo', 'data': {'request': {'api': '/user/v1/user', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}}, 'validate': [{'eq': ['$.data.user.mobile', '$mobile']}, {'eq': ['$.data.user.nickname', '$nickname']}, {'eq': ['$.data.user.status', 'enable']}]}}, {'step': '部分修改用户信息', 'function': 'userUpdate', 'data': {'request': {'api': '/user/v1/user', 'method': 'PATCH', 'headers': {'Content-Type': 'application/json', 'Authorization': '$token'}, 'data': {'email': '1907936995@qq.com'}}, 'validate': [{'eq': ['$.code', 0]}, {'eq': ['$.msg', 'OK']}]}}]", "'普通用户'", "'获取用户信息，并修改'" ]
+        } ],
+        "uid" : "189d8391d9720ea3a96bd09b4499855a"
+      } ],
+      "uid" : "b542faed268f7947f9b6050ec3b4a8b2"
+    } ],
+    "uid" : "3d60859b0087a537ed73f1781ee0b4ef"
+  } ]
+}
